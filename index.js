@@ -36,7 +36,7 @@ module.exports = class OssAdapter extends BaseAdapter {
             })
             .then(data => {
 
-                var imageUrl = data.url;
+                var imageUrl = data.url.replace(/^http/, 'https');
 
                 if (this.config.domain) {
                     imageUrl = imageUrl.replace(/.*aliyuncs.com/, this.config.domain);
